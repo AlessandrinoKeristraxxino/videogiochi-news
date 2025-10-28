@@ -5,8 +5,8 @@
   <title>Notizie Videogiochi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    
     body { font-family: Arial, sans-serif; background: #1a1a1a; color: #f3f3f3; margin: 0; }
+    header, .container { position: relative; z-index: 1; }
     header { background: #333; padding: 20px; text-align: center; }
     h1 { margin: 0; }
     .container { max-width: 800px; margin: 40px auto; padding: 20px; background: #222; border-radius: 8px; }
@@ -15,14 +15,46 @@
     .date { font-size: 12px; color: #aaa; }
     a { color: #6cf; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    /* Forme geometriche */
+    .bg-shapes {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0; left: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .shape {
+      position: absolute;
+      opacity: 0.12;
+    }
+    .shape.circle {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: #6cf;
+      top: 60px; left: 20px;
+    }
+    .shape.square {
+      width: 120px; height: 120px;
+      background: #333;
+      top: 400px; left: 70vw;
+      transform: rotate(20deg);
+    }
+    .shape.triangle {
+      width: 0; height: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 120px solid #f3f3f3;
+      top: 600px; left: 10vw;
+    }
   </style>
 </head>
 <body>
   <div class="bg-shapes">
-  <div class="shape circle"></div>
-  <div class="shape square"></div>
-  <div class="shape triangle"></div>
-</div>
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+  </div>
   <header>
     <h1>Notizie Videogiochi</h1>
     <p>Le ultime novità dal mondo del gaming!</p>
